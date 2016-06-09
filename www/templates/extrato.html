@@ -1,0 +1,26 @@
+<ion-view title="Extrato">
+    <ion-content padding="true" class="has-header">
+        <ion-list id="extrato-list5" >
+            <ion-item class="item-divider">Últimas transferências</ion-item>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Tipo transação
+                </div>
+                <select ng-options="tipo as tipo for tipo in tiposMovimentacao" ng-model="tipoMovimentacao"></select>
+            </label>
+
+            <ion-item class="item-icon-left" ng-repeat="movimentacao in movimentacoes | filter : tipoMovimentacao  | orderBy: '-data'" ng-switch="movimentacao.tipo">
+                <div ng-switch-when="SAQUE">
+                    <i class="icon ion-sad-outline"></i>
+                </div>
+                <div ng-switch-when="DEPOSITO">
+                    <i class="icon ion-happy-outline"></i>
+                </div>
+                {{ movimentacao.valor | currency : "S$ " }}
+                <span class="item-note">
+                    {{ movimentacao.data | date: 'dd/MM/yyyy' }}
+                </span>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

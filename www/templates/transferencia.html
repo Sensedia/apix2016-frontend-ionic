@@ -1,0 +1,20 @@
+<ion-view title="Transferência">
+    <ion-content padding="true" class="has-header">
+        <form class="list ">
+            <ion-item class="item-divider">Valor</ion-item>
+            <label class="item item-input">
+                <input type="text" ng-model="transferencia.valor" ui-number-mask="2" min="{{ valorMin }}" max="{{ valorMax }}">
+            </label>
+            <ion-item class="range range-positive">
+                <span>{{ valorMin | currency : 'S$ ' }}</span>
+                <input type="range" ng-model="transferencia.valor" min="{{ valorMin }}" max="{{ valorMax }}">
+                <span>{{ valorMax | currency : 'S$' }}</span>
+            </ion-item>
+            <ion-item class="item-divider">Conta destino</ion-item>
+            <label class="item item-input item-stacked-label">
+                <input type="text" placeholder="" ng-model="transferencia.conta_destino">
+            </label>
+        </form>
+        <a ui-sref="menu.paginaInicial" class=" button button-positive button-block button-outline" ng-click="efetuarMovimentacao(transferencia)">Transferir</a>
+    </ion-content>
+</ion-view>

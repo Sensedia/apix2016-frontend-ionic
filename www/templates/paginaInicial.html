@@ -1,0 +1,16 @@
+<ion-view title="Início" hide-back-button="true">
+    <ion-content padding="true" class="has-header">
+        <ion-list>
+            <ion-item class="item-avatar">
+                <h2> {{ usuario.nome }}</h2>
+                <p>Conta: {{ usuario.numero }}</p>
+                <p>Cliente desde: {{ usuario.data_criacao | date: 'dd/MM/yyyy' }}</p>
+            </ion-item>
+            <ion-item class="item-divider">Saldo</ion-item>
+            <label class="item item-input item-stacked-label">
+                <input type="text" ng-model="usuario.saldo" ui-money-mask="2" ng-disabled="true">
+            </label>
+            <a class="button button-positive button-block button-outline" ng-click="consultar(usuario)">Atualizar</a>
+        </ion-list>
+    </ion-content>
+</ion-view>

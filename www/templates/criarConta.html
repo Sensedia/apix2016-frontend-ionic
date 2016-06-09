@@ -1,0 +1,25 @@
+<ion-view title="Criar conta">
+    <ion-content padding="true" class="has-header">
+        <form class="list">
+            <ion-list id="criarConta-list8" class=" ">
+                <label class="item item-input item-floating-label ">
+                    <span class="input-label">Nome</span>
+                    <input type="text" placeholder="Nome" ng-model="conta.nome">
+                </label>
+                <label class="item item-input item-floating-label ">
+                    <span class="input-label">CPF</span>
+                    <input type="text" placeholder="CPF" ng-model="conta.cpf" ui-br-cpf-mask>
+                </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Senha</span>
+                    <input type="password" placeholder="Senha" ng-model="conta.senha">
+                </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Confirmar senha</span>
+                    <input type="password" placeholder="Confirmar senha" ng-model="conta.confirmarSenha">
+                </label>
+            </ion-list>
+        </form>
+        <a class=" button button-positive button-block button-outline" ng-click="criar(conta)">Criar conta</a>
+    </ion-content>
+</ion-view>
